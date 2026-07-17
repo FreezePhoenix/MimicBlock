@@ -1,0 +1,35 @@
+{
+	"schemaVersion": 1,
+	"id": "mimic",
+	"version": "${version}",
+	"name": "Mimic Block",
+	"description": "A block that can mimic other blocks, without collision.",
+	"authors": [
+		"FreezePhoenix"
+	],
+	"contact": {
+		"sources": "https://github.com/FreezePhoenix/MimicBlock"
+	},
+	"license": "ARR",
+	"icon": "assets/mimic/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"fabric-datagen": [
+			"com.freezephoenix.fabric.mimic.MimicBlockModDataGenerator"
+		],
+		"main": [
+			"com.freezephoenix.fabric.mimic.MimicBlockMod"
+		],
+		"client": [
+			"com.freezephoenix.fabric.mimic.MimicBlockMod"
+		]
+	},
+	"mixins": [
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.2",
+		"fabric-api": "*",
+		"freezelib": ">=1.0.1"
+	}
+}

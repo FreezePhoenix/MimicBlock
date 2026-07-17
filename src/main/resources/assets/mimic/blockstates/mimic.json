@@ -1,0 +1,8 @@
+{
+	"variants": {
+		"": {
+			"fabric:type": "mimic:mimic_model",
+			"fallback": { "model": "mimic:block/mimic" }
+		}
+	}
+}
