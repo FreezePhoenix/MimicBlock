@@ -45,9 +45,8 @@ public class MimicBlockMod implements ModInitializer, ClientModInitializer {
 	public static FreezeLib.BetterBlockEntity<MimicBlock, MimicBlockEntity> MIMIC;
 	public static MenuType<MimicMenu> MIMIC_MENU_TYPE;
 
-	static {
-		FreezeLib.registerCreativeTab(MOD_ID, () -> Blocks.REINFORCED_DEEPSLATE);
-	}
+	public static final FreezeLib.FreezeTab ITEM_GROUP = FreezeLib.registerCreativeTab("mimic",() -> MIMIC.block());
+
 
 	@Override
 	public void onInitialize() {
@@ -90,6 +89,7 @@ public class MimicBlockMod implements ModInitializer, ClientModInitializer {
 		}, MIMIC.block());
 		MimicPayload.registerClient();
 		registerMenu(MIMIC_MENU_TYPE);
+		ITEM_GROUP.register();
 	}
 
 	public static Identifier id(String path) {

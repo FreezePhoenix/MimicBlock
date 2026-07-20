@@ -30,6 +30,6 @@
 		"fabricloader": ">=0.19.3",
 		"minecraft": "~26.2",
 		"fabric-api": "*",
-		"freezelib": ">=1.0.1"
+		"freezelib": "1.1.0"
 	}
 }
