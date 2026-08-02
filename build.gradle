@@ -37,15 +37,17 @@ dependencies {
 	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 
 	// For maven local:
-	api "com.freezephoenix:freezelib:1.1.0"
+	api "com.freezephoenix:freezelib:${project.freezelib_version}"
 }
 
 processResources {
 	def version = project.version
+	def freezelib_version = project.freezelib_version
 	inputs.property "version", version
+	inputs.property "freezelib_version", freezelib_version
 
 	filesMatching("fabric.mod.json") {
-		expand "version": version
+		expand "version": version, "freezelib_version": freezelib_version
 	}
 }
 
@@ -64,6 +66,17 @@ java {
 }
 
 jar {
+}
+
+loom {
+	splitEnvironmentSourceSets()
+
+	mods {
+		"mimicblock" {
+			sourceSet sourceSets.main
+			sourceSet sourceSets.client
+		}
+	}
 }
 
 // configure the maven publication

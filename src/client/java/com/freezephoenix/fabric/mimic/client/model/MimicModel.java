@@ -1,4 +1,4 @@
-package com.freezephoenix.fabric.mimic.model;
+package com.freezephoenix.fabric.mimic.client.model;
 
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;

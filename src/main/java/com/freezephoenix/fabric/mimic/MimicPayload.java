@@ -43,22 +43,6 @@ public record MimicPayload(BlockPos pos, BlockState state) implements CustomPack
 		);
 	}
 
-	@Environment(EnvType.CLIENT)
-	public static void registerClient() {
-		ClientPlayNetworking.registerGlobalReceiver(
-				MimicPayload.TYPE,
-				MimicPayload::handle
-		);
-	}
-
-	@Environment(EnvType.CLIENT)
-	private static void handle(MimicPayload payload, ClientPlayNetworking.Context context) {
-		context.client().execute(() -> {
-			if (context.player().containerMenu instanceof MimicMenu roomControllerScreenHandler) {
-				roomControllerScreenHandler.update(payload);
-			}
-		});
-	}
 	private static void handle(MimicPayload payload, ServerPlayNetworking.Context context) {
 		context.server().execute(() -> {
 			BlockState state = payload.state();
