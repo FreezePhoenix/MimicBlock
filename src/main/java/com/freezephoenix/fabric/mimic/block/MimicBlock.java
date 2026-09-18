@@ -18,15 +18,8 @@ public final class MimicBlock extends InventoryBetterBlock<MimicBlockEntity> {
 	public static final Identifier ID = Identifier.fromNamespaceAndPath("mimic", "mimic");
 	public static final BlockItemId BlockItemID = BlockItemId.create(ID, ID);
 
-	public static final MapCodec<MimicBlock> CODEC = MimicBlock.simpleCodec(MimicBlock::new);
-
 	public MimicBlock(Properties properties) {
 		super(properties);
-	}
-
-	@Override
-	protected MapCodec<MimicBlock> codec() {
-		return CODEC;
 	}
 
 	@Override
